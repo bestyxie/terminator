@@ -5,7 +5,7 @@
       <p :class="i === selected ? 'active': ''" @click="fn_select(i, q.goto)">{{q.text}}</p>
     </div>
 
-    <a href="javascript:void(0);" class="next" v-if="selected >= 0">下一题</a>
+    <a href="javascript:void(0);" class="next" v-if="selected >= 0 && typeof goto !== 'string'" @click="fn_next">下一题</a>
     <a href="javascript: void(0);" class="commit" v-if="typeof goto === 'string'">提交</a>
   </div>
 </template>
@@ -99,7 +99,10 @@
         self.goto = goto;
       },
       fn_next: function () {
+        var self = this;
 
+        self.current = self.goto;
+        self.selected = -1;
       }
     }
 
