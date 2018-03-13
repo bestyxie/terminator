@@ -9,7 +9,9 @@
 <script>
   export default {
     name: 'home',
-    data: {},
+    data: function (){
+      return {}
+    },
     created(){}
   }
 </script>

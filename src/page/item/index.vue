@@ -6,7 +6,7 @@
     </div>
 
     <a href="javascript:void(0);" class="next" v-if="selected >= 0 && typeof goto !== 'string'" @click="fn_next">下一题</a>
-    <a href="javascript: void(0);" class="commit" v-if="typeof goto === 'string'">提交</a>
+    <a href="javascript: void(0);" class="commit" v-if="typeof goto === 'string'" @click="fn_commit">提交</a>
   </div>
 </template>
 
@@ -103,6 +103,11 @@
 
         self.current = self.goto;
         self.selected = -1;
+      },
+      fn_commit: function (){
+
+        this.$store.commit('REMEBER_RESULT', this.goto);
+        this.$router.push("result");
       }
     }
 

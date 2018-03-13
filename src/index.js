@@ -5,6 +5,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import app from './App.vue';
 import routes from './router/router';
+import store from './store/';
 
 /*const Foo = {
   template: '<div>Foo</div>'
@@ -42,6 +43,7 @@ new Vue({
   data: {
     text: "hello"
   },
-  router
+  router,
+  store
 })
 

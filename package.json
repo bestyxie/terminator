@@ -32,6 +32,6 @@
   "dependencies": {
     "vue": "^2.5.13",
     "vue-router": "^3.0.1",
-    "vux": "^2.8.0"
+    "vuex": "^3.0.1"
   }
 }

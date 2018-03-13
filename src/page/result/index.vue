@@ -1,5 +1,9 @@
 <template>
-<p>result</p>
+  <div class="result" v-if="this.type">
+    <h2>{{this.type+"、"+this.result[this.type].conclude}}</h2>
+    <p>{{this.result[this.type].msg}}</p>
+  </div>
+
 </template>
 
 <script>
@@ -7,6 +11,7 @@
     name: "result",
     data: function (){
       return {
+        type: "",
         result: {
           A: {
             conclude: "你很不会聊天，典型的话题终结者",
@@ -26,10 +31,19 @@
           }
         }
       }
+    },
+    created: function (){
+      this.type = this.$store.state.result;
     }
   }
 </script>
 
 <style lange="scss">
-
+  .result{
+    margin-top: 40%;
+    padding: 0 20px;
+    p{
+      text-indent: 20px;
+    }
+  }
 </style>
